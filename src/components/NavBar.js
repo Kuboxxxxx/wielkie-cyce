@@ -7,14 +7,12 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Badge from "@mui/material/Badge";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -22,7 +20,7 @@ export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#252525" }}>
       <Drawer
         anchor="top"
         open={isOpen}
@@ -30,7 +28,7 @@ export const NavBar = () => {
           setIsOpen(false);
         }}
       >
-        <List>
+        <List sx={{ backgroundColor: "#252525", color: "#fff" }}>
           <ListItem disablePadding>
             <ListItemButton
               onClick={() => {
@@ -42,7 +40,7 @@ export const NavBar = () => {
             </ListItemButton>
           </ListItem>
 
-          <Divider />
+          <Divider sx={{ backgroundColor: "#cfcfcf" }} />
 
           <ListItem disablePadding>
             <ListItemButton
@@ -55,7 +53,7 @@ export const NavBar = () => {
             </ListItemButton>
           </ListItem>
 
-          <Divider />
+          <Divider sx={{ backgroundColor: "#cfcfcf" }} />
 
           <ListItem disablePadding>
             <ListItemButton
@@ -67,32 +65,29 @@ export const NavBar = () => {
               <ListItemText primary="Merch" />
             </ListItemButton>
           </ListItem>
+
+          <Divider sx={{ backgroundColor: "#cfcfcf" }} />
+
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => {
+                navigate("/wspolpraca");
+                setIsOpen(false);
+              }}
+            >
+              <ListItemText primary="Współpraca" />
+            </ListItemButton>
+          </ListItem>
         </List>
-
-        <Divider />
-
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={() => {
-              navigate("/wspolpraca");
-              setIsOpen(false);
-            }}
-          >
-            <ListItemText primary="Współpraca" />
-          </ListItemButton>
-        </ListItem>
       </Drawer>
-      <Container maxWidth="xl">
+      <Container maxWidth>
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
               color="inherit"
               onClick={() => {
-                setIsOpen(true);
+                navigate("/");
               }}
             >
               <MenuIcon />
@@ -101,36 +96,68 @@ export const NavBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{ my: 2, color: "#FDFDFD", display: "block" }}
               onClick={() => {
                 navigate("/");
               }}
             >
-              Home
-            </Button>
-
-            <Button
-              sx={{ my: 2, color: "white", display: "block" }}
-              onClick={() => {
-                navigate("/wish-list");
-              }}
-            >
-              Wish List
+              wielkiecyce.pl
             </Button>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: { xs: "none", md: "flex" },
+              gap: "60px",
+            }}
+          >
+            <Button
+              sx={{ my: 2, color: "#FDFDFD" }}
               onClick={() => {
-                navigate("/checkout");
+                navigate("/czlonkowie");
               }}
             >
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
-              </Badge>
+              Członkowie
+            </Button>
+
+            <Button
+              sx={{ my: 2, color: "#FDFDFD" }}
+              onClick={() => {
+                navigate("/harmonogram");
+              }}
+            >
+              Harmonogram
+            </Button>
+
+            <Button
+              sx={{ my: 2, color: "#FDFDFD" }}
+              onClick={() => {
+                navigate("/merch");
+              }}
+            >
+              Merch
+            </Button>
+
+            <Button
+              sx={{ my: 2, color: "#FDFDFD" }}
+              onClick={() => {
+                navigate("/wspolpraca");
+              }}
+            >
+              Współpraca
+            </Button>
+          </Box>
+
+          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              color="inherit"
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
+              <MenuIcon />
             </IconButton>
           </Box>
         </Toolbar>
