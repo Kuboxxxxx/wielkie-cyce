@@ -12,10 +12,20 @@ import { Icon } from "@iconify/react";
 export const Home = () => {
   return (
     <Container>
-      <Box sx={{ display: "flex", flexWrap: { xs: "wrap", md: "nowrap" } }}>
-        <Container sx={{ flexGrow: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: { xs: "wrap", md: "nowrap" },
+          padding: "50px 0",
+        }}
+      >
+        <Container>
           <Box>
-            <Typography component="h1" variant="h3" sx={{ color: "#fff" }}>
+            <Typography
+              component="h1"
+              variant="h3"
+              sx={{ color: "#fff", marginBottom: "8px" }}
+            >
               wielkiecyce.pl
             </Typography>
           </Box>
@@ -32,6 +42,7 @@ export const Home = () => {
                 fontWeight: "700",
                 fontSize: "20px",
                 color: "#fdfdfd",
+                padding: "8px 16px",
               }}
             >
               Świat najlepszych streamów
@@ -43,6 +54,7 @@ export const Home = () => {
                 fontWeight: "400",
                 fontSize: "14px",
                 color: "#f2f2f2",
+                padding: "8px 16px",
               }}
             >
               Dołącz do jedynego takiego community,w którym dzielimy się swoimi
@@ -52,8 +64,12 @@ export const Home = () => {
             </Typography>
           </Box>
         </Container>
-        <Container sx={{ flexGrow: 3 }}>
-          <Typography component="h2" variant="h5" sx={{ color: "#fff" }}>
+        <Container>
+          <Typography
+            component="h2"
+            variant="h5"
+            sx={{ color: "#fff", marginTop: "30px" }}
+          >
             kangurek_kao_pej
           </Typography>
           <TwitchPlayer />
@@ -65,6 +81,7 @@ export const Home = () => {
               variant="contained"
               sx={{ marginLeft: "auto", backgroundColor: "#5800FF" }}
               startIcon={<Icon icon="mdi:twitch" />}
+              href="https://www.twitch.tv/kangurek_kao_pej"
             >
               Wbijam
             </Button>
@@ -72,7 +89,7 @@ export const Home = () => {
         </Container>
       </Box>
       <Box sx={{ display: "flex", flexWrap: { xs: "wrap", md: "nowrap" } }}>
-        <Container sx={{ flexGrow: 2 }}>
+        <Container>
           <Typography
             component="h3"
             sx={{
@@ -111,6 +128,8 @@ export const Home = () => {
               }}
               startIcon={<InstagramIcon />}
               variant="outlined"
+              href="https://www.instagram.com/kangurek_kao_pej/"
+              target="blank"
             >
               Sprawdź
             </Button>
@@ -129,7 +148,7 @@ export const Home = () => {
                 Twitter
               </Typography>
               <Typography component="p" sx={{ color: "#cecece" }}>
-                @kangurek_kao_pej
+                @KaoPej
               </Typography>
             </Container>
             <Button
@@ -140,6 +159,8 @@ export const Home = () => {
               }}
               startIcon={<TwitterIcon />}
               variant="outlined"
+              href="https://twitter.com/KaoPej"
+              target="blank"
             >
               Sprawdź
             </Button>
@@ -155,10 +176,10 @@ export const Home = () => {
           >
             <Container>
               <Typography component="p" sx={{ color: "#fdfdfd" }}>
-                Instagram
+                TikTok
               </Typography>
               <Typography component="p" sx={{ color: "#cecece" }}>
-                @kangurek_kao_pej
+                @kangurekpej
               </Typography>
             </Container>
             <Button
@@ -169,6 +190,8 @@ export const Home = () => {
               }}
               startIcon={<Icon icon="ph:tiktok-logo-light" />}
               variant="outlined"
+              href="https://www.tiktok.com/@kangurekpej"
+              target="blank"
             >
               Sprawdź
             </Button>
@@ -183,10 +206,10 @@ export const Home = () => {
           >
             <Container>
               <Typography component="p" sx={{ color: "#fdfdfd" }}>
-                Instagram
+                YouTube
               </Typography>
               <Typography component="p" sx={{ color: "#cecece" }}>
-                @kangurek_kao_pej
+                @kangurekkaopej8949
               </Typography>
             </Container>
             <Button
@@ -197,6 +220,8 @@ export const Home = () => {
               }}
               startIcon={<YouTubeIcon />}
               variant="outlined"
+              href="https://www.youtube.com/@kangurekkaopej8949"
+              target="blank"
             >
               Sprawdź
             </Button>
@@ -207,7 +232,6 @@ export const Home = () => {
             padding: "16px",
             backgroundColor: "#252525",
             borderRadius: "4px",
-            flexGrow: 3,
           }}
         >
           <Typography

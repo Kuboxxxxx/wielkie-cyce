@@ -7,12 +7,13 @@ export const Tag = ({ value }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        padding: "4px 8px",
+        padding: "8px 16px",
         backgroundColor: "#252525",
         color: "#fdfdfd",
         fontSize: "12px",
         textAlign: "justify",
         borderRadius: "16px",
+        margin: "4px 8px"
       }}
     >
       {value}
